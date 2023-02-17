@@ -37,12 +37,24 @@ const productContainer = document.getElementById("products__content");
 function printProducts() {
   let html = "";
   for (const product of products) {
+//if(dataFilter=="all"){
+    /*
+} else if(dataFilter==".guitars"){
+  productContainer.innerHTML = "Guitarras a imprimir";
+}else if(dataFilter==".drums"){
+  productContainer.innerHTML = "Baterias a imprimir";
+}else if(dataFilter==".keyboards"){
+  productContainer.innerHTML = "Teclados a imprimir";
+}
+
+*/
+
+
     html += `
     <article class="products__card guitars">
       <div class="products__shape">
         <img src="${product.image}" alt="${product.name}" class="products__img">
       </div>
-
       <div class="products__data">
         <h2 class="products__name">${product.name}</h2>
         <div class="">
@@ -80,12 +92,10 @@ function printCart() {
         <div class="cart__box">
           <img src="${product.image}" alt="${product.name}" class="cart__img">
         </div>
-
         <div class="cart__details">
           <h3 class="cart__title">${product.name} <span class="cart__price">$${
       product.price
     }</span></h3>
-
           <div class="cart__amount">
             <div class="cart__amount-content">
               <span class="cart__amount-box removeToCart" data-id="${
@@ -93,14 +103,11 @@ function printCart() {
               }">
                 <i class="bx bx-minus"></i>
               </span>
-
               <span class="cart__amount-number">${article.qty}</span>
-
               <span class="cart__amount-box addToCart" data-id="${product.id}">
                 <i class="bx bx-plus"></i>
               </span>
             </div>
-
             <i class="bx bx-trash-alt cart__amount-trash deleteToCart" data-id="${
               product.id
             }"></i>
